@@ -1,0 +1,393 @@
+@font-face {
+  font-family: 'Proxima Nova Alt Light' ;
+  font-style: normal;
+  font-weight: normal;
+  src: local('Proxima Nova Alt Light'), url('../fonts/proxima-nova-alt.woff') format('woff');
+}
+body{
+  font-family: 'Proxima Nova Alt Light'!important;
+  background-color: #1a1a1a !important;
+  color:#fff !important;
+}
+nav.user-panel{
+  position: fixed;
+  width:200px;
+  height: 100vh;
+  background-color: #121212;
+}
+nav.user-panel ul{
+  padding: 10px;
+  list-style: none;
+}
+nav.user-panel ul li{
+  font-size: 12px;
+  margin:5px 10px;
+}
+nav.user-panel ul li:first-child, nav.user-panel ul li:nth-child(2){
+  margin: 2px 0;
+  text-align: center;
+
+}
+.img-circle{
+  border-radius: 50%;
+  width: 100px;
+}
+.feature-container{
+  padding-left: 200px;
+}
+footer{
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  bottom:0;
+  z-index: 10;
+  background-color: #282828;
+}
+.footer-flex{
+  display:flex;
+  color:#9ba0a0;
+  justify-content: space-around;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+}
+.footer-flex_item {
+  width: 33.3%;
+}
+.footer-flex_item:nth-child(1){
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+}
+.footer-flex_item:nth-child(2){
+  text-align: center;
+}
+.footer-flex_item:nth-child(3){
+  text-align: right;
+}
+.search-container {
+  position: absolute;
+
+  height: 69px;
+  padding: 20px;
+
+}
+.search-container #search{
+  font-size: 14px;
+  border-radius: 30px;
+  border-style: none;
+  padding-right: 20px !important;
+  padding-left: 26px !important;
+  line-height: 19px;
+  color: #3e3e40;
+  vertical-align: middle;
+  background-color: #dfe0e6;
+  background-image: none;
+  border: 1px solid #dfe0e6;
+}
+#search:focus{
+  border-radius: 30px;
+  outline: none;
+}
+.icon-search{
+  position: absolute;
+  top: 25px;
+  color: #88898c;
+  height: 20px;
+  left: 25px;
+}
+.hide-audio{
+  display:none;
+}
+.controls-manager{
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  margin:0 auto;
+}
+.playing-thumbnail {
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+}
+.playing-thumbnail img{
+  width:100%;
+}
+.song-container {
+    margin: 10px 0;
+}
+.player-icons, .icon-volume-mute, .icon-player4{
+  font-size: 20px;
+  line-height: 80px !important;
+}
+.player-icons:hover{
+  cursor: pointer;
+}
+.icon-player8,.icon-player7{
+  font-size:35px;
+}
+.song-status {
+    position: relative;
+    width: 300px;
+    height: 5px;
+    border: 1px solid #3e3e40;
+    margin: 0 auto;
+    border-radius: 10px;
+    background: #3e3e40
+}
+.song-status:hover{
+  cursor: pointer;
+}
+.player-progress-value {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #6AE368;
+  border-radius: 40px;
+}
+.player-progress-value:after {
+  position: absolute;
+  top: -3px;
+  right: -6px;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #6AE368;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px 2px;
+}
+.player-icons.repeat.active,.player-icons.random.active{
+  color:#6AE368;
+}
+.current-song-duration {
+  position: absolute;
+  right: -30px;
+  top: -8px;
+  font-size: 13px;
+}
+.volume-manager{
+  display: flex;
+  justify-content: flex-start;
+  width: 170px;
+  margin: 0 auto;
+}
+.volume-status{
+  position: relative;
+  width: 100px;
+  height: 5px;
+  border: 1px solid #3e3e40;
+  margin: 0 auto;
+  border-radius: 10px;
+  background: #3e3e40;
+  margin-top: 37.5px;
+  margin-left: 5px;
+}
+.volume-status:hover{
+  cursor: pointer;
+}
+.player-volume-value{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #6AE368;
+  border-radius: 40px;
+}
+.player-volume-value:after{
+  position: absolute;
+  top: -3px;
+  right: -6px;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #6AE368;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px 2px;
+}
+.volume-status-2{
+  width: 100px;
+  height: 5px;
+  line-height: 80px;
+  border: 1px solid #3e3e40;
+  margin: 0 auto;
+  border-radius: 10px;
+  background: #3e3e40;
+  margin-top: 37.5px;
+  margin-left: 10px;
+}
+.hidden-btn{
+  display:none;
+}
+.songs-list-container {
+    position: absolute;
+    top: 70px;
+    padding-bottom: 100px;
+}
+.album-wrapper{
+  display:flex;
+  margin: 5px 0;
+}
+.thumbnail-album-cover{
+  width: 200px;
+  padding-left: 20px;
+}
+.thumbnail-album-cover img{
+  width:100%;
+}
+.songs-list-container h2,p{
+  padding-left: 20px
+}
+.tb-wrapper{
+  width: 1000px;
+  margin-left: 20px;
+}
+.tr-song{
+  border-bottom: 1px solid #282828;
+}
+tr.tr-song td {
+    padding: 11px 0px;
+}
+td.song-number {
+    /* margin-right: 10px; */
+    padding-right: 10px;
+}
+td.song-name {
+    width: 400px;
+}
+td.song-album {
+    width: 170px;
+}
+td.song-duration{
+  text-align: right;
+}
+/*FONT ICONS*/
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?92ad5q');
+  src:  url('../fonts/icomoon.eot?92ad5q#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?92ad5q') format('truetype'),
+    url('../fonts/icomoon.woff?92ad5q') format('woff'),
+    url('../fonts/icomoon.svg?92ad5q#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before {
+  content: "\e900";
+}
+.icon-shuffle:before {
+  content: "\e909";
+}
+.icon-random:before {
+  content: "\e909";
+}
+.icon-player2:before {
+  content: "\e909";
+}
+.icon-loop:before {
+  content: "\e90a";
+}
+.icon-repeat:before {
+  content: "\e90a";
+}
+.icon-player3:before {
+  content: "\e90a";
+}
+.icon-volume-mute:before {
+  content: "\e901";
+}
+.icon-volume:before {
+  content: "\e901";
+}
+.icon-audio:before {
+  content: "\e901";
+}
+.icon-player:before {
+  content: "\e901";
+}
+.icon-volume-low:before {
+  content: "\e902";
+}
+.icon-volume2:before {
+  content: "\e902";
+}
+.icon-audio2:before {
+  content: "\e902";
+}
+.icon-speaker:before {
+  content: "\e902";
+}
+.icon-player22:before {
+  content: "\e902";
+}
+.icon-volume-medium:before {
+  content: "\e903";
+}
+.icon-volume3:before {
+  content: "\e903";
+}
+.icon-audio3:before {
+  content: "\e903";
+}
+.icon-speaker2:before {
+  content: "\e903";
+}
+.icon-player32:before {
+  content: "\e903";
+}
+.icon-volume-high:before {
+  content: "\e904";
+}
+.icon-volume4:before {
+  content: "\e904";
+}
+.icon-audio4:before {
+  content: "\e904";
+}
+.icon-speaker3:before {
+  content: "\e904";
+}
+.icon-player4:before {
+  content: "\e904";
+}
+.icon-next:before {
+  content: "\e905";
+}
+.icon-player5:before {
+  content: "\e905";
+}
+.icon-previous:before {
+  content: "\e906";
+}
+.icon-player6:before {
+  content: "\e906";
+}
+.icon-pause:before {
+  content: "\e907";
+}
+.icon-player7:before {
+  content: "\e907";
+}
+.icon-play:before {
+  content: "\e908";
+}
+.icon-player8:before {
+  content: "\e908";
+}
