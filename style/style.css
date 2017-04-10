@@ -161,6 +161,12 @@ footer{
 .player-icons.repeat.active,.player-icons.random.active{
   color:#6AE368;
 }
+.current-song-status{
+  position: absolute;
+  left:-55px;
+  top:-8px;
+  font-size: 13px;
+}
 .current-song-duration {
   position: absolute;
   right: -30px;

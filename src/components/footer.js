@@ -10,6 +10,7 @@ class FooterPlayer extends Component {
     current:0,
     progress: 0,
     songDuration:0,
+    songStatus:0,
     progressVolume:100,
     random: false,
     repeat: false,
@@ -50,11 +51,13 @@ class FooterPlayer extends Component {
     let duration = this.refs.player.duration;
     let currentTime = this.refs.player.currentTime;
     let progress = (currentTime * 100) / duration;
-
+    let songStatusMin = Math.floor(currentTime / 60);
+    let songStatusSeg = currentTime - songStatusMin * 60;
+    let songStatus = songStatusMin + ":" + Math.floor(songStatusSeg);
     let minutes =  Math.floor(duration / 60);
     let seconds =  duration - minutes * 60;
     let songDuration = minutes + ":" + Math.floor(seconds);
-    this.setState({ progress: progress,songDuration: songDuration });
+    this.setState({ progress: progress,songDuration: songDuration,songStatus: songStatus });
   }
 
   setVolume = (e) =>{
@@ -132,7 +135,7 @@ class FooterPlayer extends Component {
   }
 
   render(){
-    const { active, play, progress, progressVolume, songDuration } = this.state;
+    const { active, play, progress, progressVolume, songDuration, songStatus } = this.state;
 
     let coverClass = classnames('player-cover', {'no-height': !!!active.cover });
     let playPauseClass = classnames('player-icons', {'icon-player7': play}, {'icon-player8': !play});
@@ -155,13 +158,14 @@ class FooterPlayer extends Component {
           </div>
           <div className="footer-flex_item player-manager-container">
             <div className="controls-manager">
-              <div className={randomClass} onClick={this.randomize} title="random"><i className="icon-player2 player-icons"></i></div>
-              <div className="control-item" onClick={this.previous} title="Previous Song"><i className="icon-player6 player-icons"></i></div>
+              <div className={randomClass} onClick={this.randomize} title="Random"><i className="icon-player2 player-icons"></i></div>
+              <div className="control-item" onClick={this.previous} title="Canción anterior"><i className="icon-player6 player-icons"></i></div>
               <div className="control-item" onClick={this.toggle} title="Play/Pause"><i className={playPauseClass}></i></div>
-              <div className="control-item" onClick={this.next} title="Next Song"><i className="icon-player5 player-icons"></i></div>
-              <div className={repeatClass} onClick={this.repeat} title="Repeat"><i className="icon-player3 player-icons"></i></div>
+              <div className="control-item" onClick={this.next} title="Canción siguiente"><i className="icon-player5 player-icons"></i></div>
+              <div className={repeatClass} onClick={this.repeat} title="Repetir"><i className="icon-player3 player-icons"></i></div>
             </div>
             <div className="song-status" onClick={this.setProgress}>
+              <p className="current-song-status">{songStatus}</p>
               <span className="player-progress-value" style={{width: progress + '%'}}></span>
               <p className="current-song-duration">{songDuration}</p>
             </div>

@@ -6,10 +6,7 @@ class SongList extends Component {
 	componentWillMount() {
     this.props.showSongs()
   }
-	
-	playThisSong(){
-		this.refs.player.play();
-	}
+
 	renderSongsList(){
     return this.props.songs.map((song) =>{
       return (
